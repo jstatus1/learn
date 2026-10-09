@@ -1,4 +1,4 @@
-import type { ExtensionAPI } from "@mariozechner/pi-coding-agent";
+import type { ExtensionAPI, ExtensionContext } from "@mariozechner/pi-coding-agent";
 import {
 	Editor,
 	type EditorTheme,
@@ -419,7 +419,7 @@ function makeNoteEditor(tui: any, theme: any): Editor {
 }
 
 async function askSingleChoice(
-	ctx: any,
+	ctx: ExtensionContext,
 	question: string,
 	context: string | undefined,
 	options: QuizOption[],
@@ -599,7 +599,7 @@ async function askSingleChoice(
 }
 
 async function askMultiChoice(
-	ctx: any,
+	ctx: ExtensionContext,
 	question: string,
 	context: string | undefined,
 	options: QuizOption[],

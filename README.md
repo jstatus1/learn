@@ -28,6 +28,10 @@ Then open pi in that directory. (Or copy the pieces you want into your existing 
 
 ## Requirements
 
+For local extension development and editor type checking, run `npm install` in
+this repository, then `npm run typecheck`. The root TypeScript configuration
+covers the standalone extensions in `extensions/*.ts`.
+
 - [pi](https://github.com/earendil-works/pi)
 - A subagent implementation, so the system can spawn the researcher and the visual makers. Recommended: [pi-interactive-subagents](https://github.com/amosblomqvist/pi-interactive-subagents) (tmux only). With it, everything works out of the box. Any other implementation works too, but expect to adapt the agent definitions, e.g. `agents/researcher.md` lists `safe_bash` in its tools, which is specific to that extension.
 - `ask-user-question` — use the copy bundled here. If your setup already has an `ask-user-question` extension, use **this** one in its place. Popups from different extensions serialize through a shared UI lock, which only works when it's the same implementation.
